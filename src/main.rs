@@ -34,7 +34,9 @@ fn main() {
     }   
     2 =>{
     let username = &args[1];
-    println!("Serial: {}", gen_serial(username));
+    if username.len() < 5 || username.len() > 32 {
+    println!("Invalid name length!");}
+    else { println!("Serial: {}", gen_serial(username)); }
     },
      _ => {
          println!("Please input your name.");
